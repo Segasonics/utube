@@ -29,7 +29,7 @@ const Video = () => {
 
     const getCommentByVideoId = async () => {
         try {
-            const { data } = await axios.get(`http://localhost:4000/commentapi/comment/${id}`)
+            const { data } = await axios.get(`https://utube-cvn8.onrender.com/commentapi/comment/${id}`)
             console.log(data.comments)
             setComments(data.comments)
         } catch (error) {
@@ -48,7 +48,7 @@ const Video = () => {
             "video": id
         }
         try {
-            const resp = await axios.post("http://localhost:4000/commentapi/addcomment", body, { withCredentials: true });
+            const resp = await axios.post("https://utube-cvn8.onrender.com/commentapi/addcomment", body, { withCredentials: true });
             setComment("")
             const newComment = resp.data.comment;
             setComments([...comments, newComment])
@@ -62,7 +62,7 @@ const Video = () => {
 
     const handleLikes = async () => {
         try {
-            const {data} = await axios.put(`http://localhost:4000/api/${id}/like`, {}, { withCredentials: true });
+            const {data} = await axios.put(`https://utube-cvn8.onrender.com/api/${id}/like`, {}, { withCredentials: true });
             const updatedPost =data.updatedPost.like;
              setData(prevData=>({
                 ...prevData,
@@ -76,7 +76,7 @@ const Video = () => {
 
     const handleUnLikes = async () => {
         try {
-            const {data }=await axios.put(`http://localhost:4000/api/${id}/dislike`, {}, { withCredentials: true });
+            const {data }=await axios.put(`https://utube-cvn8.onrender.com/api/${id}/dislike`, {}, { withCredentials: true });
             const updatedPost =data.updatedPost.dislike;
             setData(prevData=>({
                ...prevData,

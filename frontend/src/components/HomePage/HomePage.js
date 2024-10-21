@@ -6,7 +6,6 @@ import axios from 'axios';
 const HomePage = ({ sideNavbar }) => {
     const options = ["All", "Twenty20 Cricket", "Music", "Live", "Mixes", "Gaming", "Debates", "Coke Studio Pakistan", "Democracy", "Pakistani dramas", "Comedy", "Pakistani dramas", "Comedy"];
     const [data, setData] = useState([]);
-    //http://localhost:4000
 
     const getAllVideos = async () => {
         try {

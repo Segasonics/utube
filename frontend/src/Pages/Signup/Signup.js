@@ -49,7 +49,7 @@ const Signup = () => {
         }
         setLoader(true)
         try {
-            const{ data }= await axios.post('http://localhost:4000/auth/signup', signUpField);
+            const{ data }= await axios.post('https://utube-cvn8.onrender.com/auth/signup', signUpField);
             toast.success(data.message);
             console.log(data);
             setLoader(false)

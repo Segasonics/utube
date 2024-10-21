@@ -12,7 +12,7 @@ const Profile = ({ sideNavbar }) => {
     const [user, setUser] = useState(null);
     const fetchProfileData = async () => {
         try {
-            const { data } = await axios.get(`http://localhost:4000/api/${id}/channel`)
+            const { data } = await axios.get(`https://utube-cvn8.onrender.com/api/${id}/channel`)
             setDatas(data.video)
             console.log(data.video)
             setUser(data.video[0]?.user)

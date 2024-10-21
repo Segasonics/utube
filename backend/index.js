@@ -8,7 +8,7 @@ var port =4000;
 app.use(express.json())
 app.use(cookieParser())
 app.use(cors({
-    origin:['http://localhost:3000', 'https://yutuber.netlify.app'],
+    origin:['http://localhost:3000','https://yutuber.netlify.app'],
     credentials:true
 }))
 require('./connection/conn');

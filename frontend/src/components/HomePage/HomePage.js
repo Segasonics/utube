@@ -6,10 +6,11 @@ import axios from 'axios';
 const HomePage = ({ sideNavbar }) => {
     const options = ["All", "Twenty20 Cricket", "Music", "Live", "Mixes", "Gaming", "Debates", "Coke Studio Pakistan", "Democracy", "Pakistani dramas", "Comedy", "Pakistani dramas", "Comedy"];
     const [data, setData] = useState([]);
+    //http://localhost:4000
 
     const getAllVideos = async () => {
         try {
-            const response = await axios.get('http://localhost:4000/api/allvideos')
+            const response = await axios.get('https://utube-cvn8.onrender.com/api/allvideos')
             console.log(response.data.videos)
             setData(response.data.videos)
         } catch (error) {

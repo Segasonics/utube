@@ -18,7 +18,7 @@ const Video = () => {
     //console.log(comment)
     const fetchVideoById = async () => {
         try {
-            const { data } = await axios.get(`http://localhost:4000/api/getvideobyid/${id}`);
+            const { data } = await axios.get(`https://utube-cvn8.onrender.com/api/getvideobyid/${id}`);
             console.log(data.video)
             setData(data.video)
             setVideoUrl(data.video.videoLink)

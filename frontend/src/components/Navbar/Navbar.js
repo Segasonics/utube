@@ -29,7 +29,7 @@ const Navbar = ({setSideNavbarFunc,sideNavbar}) => {
 
     const getLogoutFunc=async()=>{
      try {
-      const data=await axios.post('http://localhost:4000/auth/logout',{},{withCredentials:true});
+      const data=await axios.post('https://utube-cvn8.onrender.com/auth/logout',{},{withCredentials:true});
       console.log(data)
      } catch (error) {
       console.log(error)

@@ -71,7 +71,6 @@ const VideoUpload = () => {
             console.error("Error uploading video:", error.response?.data || error.message);
         }
     }
-    console.log(inputField)
     return (
         <div className='videoUpload'>
             <div className="uploadBox">

@@ -29,7 +29,7 @@ const VideoUpload = () => {
             const response = await axios.post(`https://api.cloudinary.com/v1_1/df2zns80t/${type}/upload`, data,{
                 headers:{
                     'Content-Type':'multipart/form-data'
-                },withCredentials:true
+                },
             })
             let url = response.data.url.replace('http://', 'https://');
             const duration =response.data.duration;

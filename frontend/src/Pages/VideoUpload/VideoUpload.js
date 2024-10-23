@@ -56,7 +56,11 @@ const VideoUpload = () => {
     const handleSubmit=async()=>{
         setLoader(true)
         try {
-            const {data}= await axios.post('https://utube-cvn8.onrender.com/api/video',inputField,{withCredentials:true})//only logged in user can access so withcred
+            const {data}= await axios.post('https://utube-cvn8.onrender.com/api/video',inputField,{
+                headers:{
+                    'Content-Type':'multipart/form-data'
+                },withCredentials:true
+            })//only logged in user can access so withcred
             console.log(data)
             setInputField("")
             navigate("/");

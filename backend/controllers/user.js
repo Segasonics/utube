@@ -5,7 +5,7 @@ const jwt =require('jsonwebtoken');
 const cookieOptions={
     httpOnly:true,
     secure:true,//set to true in production
-    samSite:'None'
+    sameSite:'None'
 }
 
 exports.signUp =async(req,res)=>{

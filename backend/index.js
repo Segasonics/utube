@@ -11,6 +11,11 @@ app.use(cors({
     origin:['http://localhost:3000','https://yutuber.netlify.app'],
     credentials:true
 }))
+app.use((req, res, next) => {
+    res.setHeader('Access-Control-Allow-Credentials', 'true');
+    next();
+});
+
 require('./connection/conn');
 
 const authRoute =require('./routes/user');

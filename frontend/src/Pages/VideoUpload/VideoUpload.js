@@ -46,7 +46,7 @@ const VideoUpload = () => {
             }
         } catch (error) {
             setLoader(false)
-            console.log(error)
+            console.log(error.message)
         }
     }
 

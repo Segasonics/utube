@@ -46,7 +46,7 @@ const VideoUpload = () => {
             }
         } catch (error) {
             setLoader(false)
-            console.log(error.message)
+            console.log(error)
         }
     }
 
@@ -61,9 +61,7 @@ const VideoUpload = () => {
         setLoader(true)
         try {
             const {data}= await axios.post('https://utube-cvn8.onrender.com/api/video',inputField,{
-                headers:{
-                    'Content-Type':'multipart/form-data'
-                },withCredentials:true
+                withCredentials:true
             })//only logged in user can access so withcred
             console.log(data)
             setInputField("")

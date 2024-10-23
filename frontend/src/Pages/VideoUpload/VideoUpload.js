@@ -66,7 +66,7 @@ const VideoUpload = () => {
             navigate("/");
             setLoader(false)
         } catch (error) {
-            console.log(error)
+            console.error("Error uploading video:", error.response?.data || error.message);
         }
     }
     console.log(inputField)

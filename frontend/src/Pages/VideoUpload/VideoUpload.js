@@ -27,7 +27,7 @@ const VideoUpload = () => {
         data.append('upload_preset', 'youtube-clone');
         try {
             const response = await axios.post(`https://api.cloudinary.com/v1_1/df2zns80t/${type}/upload`, data)
-            const url = response.data.url;
+            let url = response.data.url.replace('http://', 'https://');
             const duration =response.data.duration;
             console.log(response)
             setLoader(false)

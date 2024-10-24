@@ -26,8 +26,12 @@ const VideoUpload = () => {
         data.append('file', files[0]);
         data.append('upload_preset', 'youtube-clone');
         try {
-            const response = await axios.post(`https://api.cloudinary.com/v1_1/df2zns80t/${type}/upload`, data)
-            const url = response.data.url;
+            const response = await axios.post(`https://api.cloudinary.com/v1_1/df2zns80t/${type}/upload`, data,{
+                headers:{
+                    'Content-Type':'multipart/form-data'
+                },
+            })
+            let url = response.data.url.replace('http://', 'https://');
             const duration =response.data.duration;
             console.log(response)
             setLoader(false)
@@ -56,16 +60,17 @@ const VideoUpload = () => {
     const handleSubmit=async()=>{
         setLoader(true)
         try {
-            const {data}= await axios.post('https://utube-cvn8.onrender.com/api/video',inputField,{withCredentials:true})//only logged in user can access so withcred
+            const {data}= await axios.post('https://utube-cvn8.onrender.com/api/video',inputField,{
+                withCredentials:true
+            })//only logged in user can access so withcred
             console.log(data)
             setInputField("")
             navigate("/");
             setLoader(false)
         } catch (error) {
-            console.log(error)
+            console.error("Error uploading video:", error.response?.data || error.message);
         }
     }
-    console.log(inputField)
     return (
         <div className='videoUpload'>
             <div className="uploadBox">
